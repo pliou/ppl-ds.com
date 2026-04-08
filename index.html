@@ -20,6 +20,7 @@
             --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
             --radius: 22px;
             --max-width: 1240px;
+            --header-offset: 108px;
         }
 
         * {
@@ -49,6 +50,10 @@
         img {
             max-width: 100%;
             display: block;
+        }
+
+        section[id] {
+            scroll-margin-top: var(--header-offset);
         }
 
         .container {
@@ -84,6 +89,7 @@
             height: 56px;
             object-fit: contain;
             border-radius: 14px;
+            flex-shrink: 0;
         }
 
         .brand-text {
@@ -135,7 +141,7 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1.05fr 0.95fr;
             gap: 34px;
             align-items: center;
         }
@@ -190,7 +196,8 @@
             padding: 0 22px;
             border-radius: 999px;
             font-weight: 700;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+            text-align: center;
         }
 
         .button-primary {
@@ -320,16 +327,25 @@
 
         .product-image {
             width: 100%;
+            max-height: 240px;
+            object-fit: contain;
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px;
+        }
+
+        .product-image.banner-style {
+            object-fit: cover;
+            max-height: 210px;
+            padding: 0;
         }
 
         .product-icon {
-            width: 112px;
-            height: 112px;
+            width: 96px;
+            height: 96px;
             object-fit: cover;
-            border-radius: 26px;
+            border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.10);
             box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
             margin-bottom: 18px;
@@ -345,6 +361,12 @@
             color: #c9ffe2;
             border: 1px solid rgba(86, 227, 159, 0.22);
             margin-bottom: 16px;
+        }
+
+        .badge.review {
+            background: rgba(255, 211, 90, 0.12);
+            color: #ffe8a2;
+            border-color: rgba(255, 211, 90, 0.22);
         }
 
         .product-title {
@@ -424,8 +446,13 @@
         }
 
         .highlight-panel img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: contain;
             border-radius: 22px;
             border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px;
         }
 
         .highlight-panel h3 {
@@ -514,6 +541,10 @@
         }
 
         @media (max-width: 720px) {
+            :root {
+                --header-offset: 132px;
+            }
+
             .topbar-inner {
                 align-items: flex-start;
                 flex-direction: column;
@@ -544,6 +575,17 @@
 
             .brand-subtitle {
                 font-size: 0.78rem;
+            }
+
+            .product-actions,
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button-primary,
+            .button-secondary {
+                width: 100%;
             }
         }
     </style>
@@ -579,7 +621,7 @@
                         <span class="gradient">high-performance Magento extensions</span>
                     </h1>
                     <p>
-                        Pawel Pliousnin Digital Solutions develops focused, practical, and scalable Adobe Commerce and Magento extensions designed to improve search quality, reporting visibility, and merchant decision-making.
+                        Pawel Pliousnin Digital Solutions develops focused Adobe Commerce and Magento extensions that improve search quality, reporting visibility, and merchant decision-making with practical, scalable tools built for real stores.
                     </p>
 
                     <div class="hero-actions">
@@ -590,15 +632,15 @@
                     <div class="hero-points">
                         <div class="hero-point">
                             <strong>Adobe Commerce</strong>
-                            <span>Built for Magento and Adobe Commerce ecosystems.</span>
+                            <span>Built specifically for Magento and Adobe Commerce merchants.</span>
                         </div>
                         <div class="hero-point">
-                            <strong>Product Focused</strong>
-                            <span>Reusable extensions designed for real merchant needs.</span>
+                            <strong>Merchant Focused</strong>
+                            <span>Features designed around real business needs, not filler.</span>
                         </div>
                         <div class="hero-point">
                             <strong>Performance Mindset</strong>
-                            <span>Practical features with clean UX and measurable value.</span>
+                            <span>Clean UX, measurable value, and practical optimization tools.</span>
                         </div>
                     </div>
                 </div>
@@ -616,7 +658,7 @@
             <div class="container">
                 <h2 class="section-title">Focused software for modern Adobe Commerce stores</h2>
                 <p class="section-text">
-                    Pawel Pliousnin Digital Solutions builds specialized Adobe Commerce and Magento extensions for merchants who want stronger product discovery, better reporting, and practical tools that support measurable business growth. The focus is on reliable, reusable software products that solve real operational and commercial needs.
+                    Pawel Pliousnin Digital Solutions builds specialized Adobe Commerce and Magento extensions for merchants who want stronger product discovery, clearer analytics, and practical software that supports measurable business growth.
                 </p>
             </div>
         </section>
@@ -631,21 +673,21 @@
                 <div class="cards two" style="margin-top: 28px;">
                     <article class="card">
                         <div class="product-image-wrap">
-                            <img class="product-image" src="scored-search.png" alt="PPL Scored Search banner graphic">
+                            <img class="product-image banner-style" src="scored-search.png" alt="PPL Scored Search banner graphic">
                         </div>
                         <div class="card-body">
                             <img class="product-icon" src="ppl-scored-search-logo.png" alt="PPL Scored Search logo">
                             <div class="badge">Live on Adobe Commerce Marketplace</div>
                             <h3 class="product-title">PPL Scored Search</h3>
                             <p class="product-text">
-                                PPL Scored Search is an advanced search extension for Adobe Commerce and Magento that improves relevance, control, and product discovery through configurable scoring logic and a modern search experience.
+                                Replace default Magento search with a powerful, configurable scoring engine built for real-world commerce. PPL Scored Search improves relevance, strengthens product discovery, and helps customers find the right products faster.
                             </p>
                             <ul class="feature-list">
-                                <li>Advanced search scoring and weighting</li>
-                                <li>OpenSearch and MySQL support</li>
-                                <li>Modern search overlay and configurable UI</li>
-                                <li>Performance and testing tools</li>
-                                <li>Merchant-focused optimization workflow</li>
+                                <li>Fully configurable scoring and weighting system</li>
+                                <li>OpenSearch and MySQL engine support</li>
+                                <li>Modern AJAX search overlay with UX focus</li>
+                                <li>Built-in testing and comparison tools</li>
+                                <li>Designed for real merchant optimization workflows</li>
                             </ul>
                             <div class="product-actions">
                                 <a class="button-primary" href="https://commercemarketplace.adobe.com/ppl-scored-search.html" target="_blank" rel="noopener noreferrer">View on Marketplace</a>
@@ -660,17 +702,17 @@
                         </div>
                         <div class="card-body">
                             <img class="product-icon" src="ppl-order-metrics-logo.png" alt="PPL Order Metrics logo">
-                            <div class="badge">Currently under review</div>
+                            <div class="badge review">Currently under review</div>
                             <h3 class="product-title">PPL Order Metrics</h3>
                             <p class="product-text">
-                                PPL Order Metrics is an advanced business analytics extension for Adobe Commerce and Magento, designed to give merchants deeper insight into revenue, orders, product performance, and customer-related trends.
+                                Go beyond basic Magento revenue summaries with advanced reporting designed for business decisions. PPL Order Metrics helps merchants understand trends, product performance, order behavior, and the drivers behind store results.
                             </p>
                             <ul class="feature-list">
                                 <li>Advanced order and revenue reporting</li>
-                                <li>Business-focused merchant dashboards</li>
+                                <li>Business-focused dashboards inside admin</li>
                                 <li>Filtering, comparison, and export support</li>
                                 <li>Insight into trends, products, and customer behavior</li>
-                                <li>Designed for practical decision-making inside admin</li>
+                                <li>Built to turn raw data into practical action</li>
                             </ul>
                             <div class="product-actions">
                                 <a class="button-primary" href="support.html">Request Information</a>
@@ -696,11 +738,11 @@
                     </div>
                     <div class="info-box">
                         <h3>Technical depth</h3>
-                        <p>Products are developed with attention to configurability, maintainability, performance, and compatibility.</p>
+                        <p>Products are built with attention to configurability, maintainability, performance, and compatibility.</p>
                     </div>
                     <div class="info-box">
                         <h3>Long-term product mindset</h3>
-                        <p>The goal is to create reliable and reusable commerce software products rather than one-off project code.</p>
+                        <p>The goal is to create reliable, reusable commerce software products rather than one-off project code.</p>
                     </div>
                 </div>
             </div>
@@ -715,10 +757,10 @@
                     <div>
                         <h3>Software built for better search, stronger reporting, and better decisions</h3>
                         <p>
-                            Whether the goal is improving product discovery or understanding business performance more clearly, the product portfolio is built to help merchants get more value from Adobe Commerce.
+                            Whether the goal is improving product discovery or understanding store performance more clearly, the product portfolio is built to help merchants get more value from Adobe Commerce.
                         </p>
                         <p>
-                            Pawel Pliousnin Digital Solutions is positioned as a technology-focused Adobe Commerce partner with a clear emphasis on extension quality, merchant outcomes, and maintainable software development.
+                            Pawel Pliousnin Digital Solutions is positioned as a technology-focused Adobe Commerce partner with a strong emphasis on extension quality, merchant outcomes, and maintainable software development.
                         </p>
                         <a class="button-primary" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Visit Partner Profile</a>
                     </div>
@@ -736,8 +778,8 @@
                     <div class="hero-actions" style="justify-content: center; margin-bottom: 0;">
                         <a class="button-primary" href="support.html">Open Support</a>
                         <a class="button-secondary" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Partner Profile</a>
-                        <a class="button-secondary" href="privacy-policy.html">Privacy Policy</a>
-                        <a class="button-secondary" href="license.html">License</a>
+                        <a class="button-secondary" href="https://pliou.github.io/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                        <a class="button-secondary" href="https://pliou.github.io/license/" target="_blank" rel="noopener noreferrer">License</a>
                     </div>
                 </div>
             </div>
@@ -751,8 +793,8 @@
             </div>
             <div class="footer-links">
                 <a href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Marketplace Partner Profile</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="license.html">License</a>
+                <a href="https://pliou.github.io/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="https://pliou.github.io/license/" target="_blank" rel="noopener noreferrer">License</a>
                 <a href="support.html">Support</a>
             </div>
         </div>
