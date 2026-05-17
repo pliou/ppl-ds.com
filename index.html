@@ -1,803 +1,241 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawel Pliousnin Digital Solutions</title>
-    <meta name="description" content="Pawel Pliousnin Digital Solutions builds Adobe Commerce and Magento extensions, including PPL Scored Search and PPL Order Metrics.">
-    <style>
-        :root {
-            --bg: #061226;
-            --bg-soft: #0c1b35;
-            --card: rgba(12, 27, 53, 0.88);
-            --card-border: rgba(96, 160, 255, 0.18);
-            --text: #f3f7ff;
-            --muted: #afbdd8;
-            --primary: #38cfff;
-            --secondary: #a54cff;
-            --accent: #ffd35a;
-            --success: #56e39f;
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-            --radius: 22px;
-            --max-width: 1240px;
-            --header-offset: 108px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top left, rgba(56, 207, 255, 0.18), transparent 32%),
-                radial-gradient(circle at top right, rgba(165, 76, 255, 0.20), transparent 28%),
-                linear-gradient(180deg, #04101f 0%, #07172d 45%, #081a33 100%);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        section[id] {
-            scroll-margin-top: var(--header-offset);
-        }
-
-        .container {
-            width: min(100% - 32px, var(--max-width));
-            margin: 0 auto;
-        }
-
-        .topbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(18px);
-            background: rgba(5, 14, 29, 0.78);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .topbar-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            min-height: 78px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .brand img {
-            width: 56px;
-            height: 56px;
-            object-fit: contain;
-            border-radius: 14px;
-            flex-shrink: 0;
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .brand-title {
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        .brand-subtitle {
-            font-size: 0.82rem;
-            color: var(--muted);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            color: var(--muted);
-            font-size: 0.96rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav a:hover {
-            color: var(--text);
-        }
-
-        .nav .nav-cta {
-            padding: 11px 18px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            font-weight: 700;
-            box-shadow: 0 10px 25px rgba(56, 207, 255, 0.22);
-        }
-
-        .hero {
-            padding: 72px 0 34px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 34px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(56, 207, 255, 0.10);
-            color: #ccefff;
-            border: 1px solid rgba(56, 207, 255, 0.20);
-            font-size: 0.9rem;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            margin: 0 0 18px;
-            font-size: clamp(2.5rem, 4.8vw, 4.7rem);
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-        }
-
-        .hero h1 .gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #7dddff 32%, #c66bff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            margin: 0 0 26px;
-            color: var(--muted);
-            font-size: 1.08rem;
-            max-width: 740px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-bottom: 28px;
-        }
-
-        .button-primary,
-        .button-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0 22px;
-            border-radius: 999px;
-            font-weight: 700;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-            text-align: center;
-        }
-
-        .button-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            box-shadow: 0 14px 28px rgba(56, 207, 255, 0.22);
-        }
-
-        .button-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            color: var(--text);
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .button-primary:hover,
-        .button-secondary:hover {
-            transform: translateY(-2px);
-        }
-
-        .hero-points {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        .hero-point {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 16px 18px;
-            border-radius: 18px;
-        }
-
-        .hero-point strong {
-            display: block;
-            font-size: 1.18rem;
-            margin-bottom: 4px;
-            color: white;
-        }
-
-        .hero-point span {
-            color: var(--muted);
-            font-size: 0.94rem;
-        }
-
-        .hero-visual {
-            position: relative;
-        }
-
-        .hero-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 28px;
-            background: linear-gradient(180deg, rgba(10, 28, 58, 0.96), rgba(8, 18, 35, 0.96));
-            border: 1px solid rgba(113, 164, 255, 0.18);
-            box-shadow: var(--shadow);
-            padding: 28px;
-        }
-
-        .hero-card::before {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, rgba(56, 207, 255, 0.22), rgba(165, 76, 255, 0.18), rgba(255, 211, 90, 0.14));
-            z-index: 0;
-            opacity: 0.7;
-            filter: blur(24px);
-        }
-
-        .hero-card > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-logo {
-            width: 110px;
-            margin-bottom: 18px;
-        }
-
-        .hero-banner {
-            width: 100%;
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
-        }
-
-        .section {
-            padding: 42px 0;
-        }
-
-        .section-title {
-            margin: 0 0 12px;
-            font-size: clamp(1.9rem, 3vw, 3rem);
-            line-height: 1.1;
-        }
-
-        .section-text {
-            margin: 0;
-            max-width: 840px;
-            color: var(--muted);
-            font-size: 1.04rem;
-        }
-
-        .cards {
-            display: grid;
-            gap: 24px;
-        }
-
-        .cards.two {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .card-body {
-            padding: 24px;
-        }
-
-        .product-image-wrap {
-            padding: 20px 20px 0;
-        }
-
-        .product-image {
-            width: 100%;
-            max-height: 240px;
-            object-fit: contain;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 12px;
-        }
-
-        .product-image.banner-style {
-            object-fit: cover;
-            max-height: 210px;
-            padding: 0;
-        }
-
-        .product-icon {
-            width: 96px;
-            height: 96px;
-            object-fit: cover;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
-            margin-bottom: 18px;
-        }
-
-        .badge {
-            display: inline-flex;
-            padding: 7px 12px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            background: rgba(86, 227, 159, 0.12);
-            color: #c9ffe2;
-            border: 1px solid rgba(86, 227, 159, 0.22);
-            margin-bottom: 16px;
-        }
-
-        .badge.review {
-            background: rgba(255, 211, 90, 0.12);
-            color: #ffe8a2;
-            border-color: rgba(255, 211, 90, 0.22);
-        }
-
-        .product-title {
-            margin: 0 0 10px;
-            font-size: 1.65rem;
-            line-height: 1.15;
-        }
-
-        .product-text {
-            margin: 0 0 20px;
-            color: var(--muted);
-        }
-
-        .feature-list {
-            list-style: none;
-            margin: 0 0 22px;
-            padding: 0;
-            display: grid;
-            gap: 10px;
-        }
-
-        .feature-list li {
-            position: relative;
-            padding-left: 22px;
-            color: #dfe9fb;
-        }
-
-        .feature-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            top: -1px;
-            color: var(--accent);
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        .product-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .info-grid {
-            display: grid;
-            gap: 22px;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .info-box {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 20px;
-            padding: 22px;
-        }
-
-        .info-box h3 {
-            margin: 0 0 10px;
-            font-size: 1.14rem;
-        }
-
-        .info-box p {
-            margin: 0;
-            color: var(--muted);
-        }
-
-        .highlight-panel {
-            display: grid;
-            grid-template-columns: 0.92fr 1.08fr;
-            gap: 26px;
-            align-items: center;
-            background: linear-gradient(180deg, rgba(11, 24, 48, 0.95), rgba(8, 17, 35, 0.95));
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 28px;
-            box-shadow: var(--shadow);
-            padding: 28px;
-        }
-
-        .highlight-panel img {
-            width: 100%;
-            max-height: 320px;
-            object-fit: contain;
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            background: rgba(255, 255, 255, 0.03);
-            padding: 12px;
-        }
-
-        .highlight-panel h3 {
-            margin: 0 0 12px;
-            font-size: 1.9rem;
-            line-height: 1.15;
-        }
-
-        .highlight-panel p {
-            margin: 0 0 18px;
-            color: var(--muted);
-        }
-
-        .cta-section {
-            padding: 24px 0 68px;
-        }
-
-        .cta-box {
-            padding: 34px;
-            border-radius: 28px;
-            background:
-                radial-gradient(circle at top left, rgba(56, 207, 255, 0.18), transparent 32%),
-                radial-gradient(circle at bottom right, rgba(165, 76, 255, 0.20), transparent 28%),
-                linear-gradient(180deg, rgba(12, 27, 53, 0.94), rgba(7, 19, 39, 0.98));
-            border: 1px solid rgba(123, 171, 255, 0.16);
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .cta-box h2 {
-            margin: 0 0 12px;
-            font-size: clamp(1.9rem, 3vw, 2.9rem);
-        }
-
-        .cta-box p {
-            margin: 0 auto 24px;
-            max-width: 760px;
-            color: var(--muted);
-        }
-
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 26px 0 36px;
-            background: rgba(3, 9, 20, 0.58);
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            gap: 18px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-text {
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--muted);
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        @media (max-width: 1040px) {
-            .hero-grid,
-            .highlight-panel,
-            .cards.two,
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding-top: 52px;
-            }
-        }
-
-        @media (max-width: 720px) {
-            :root {
-                --header-offset: 132px;
-            }
-
-            .topbar-inner {
-                align-items: flex-start;
-                flex-direction: column;
-                padding: 14px 0;
-            }
-
-            .nav {
-                gap: 12px;
-            }
-
-            .hero-points {
-                grid-template-columns: 1fr;
-            }
-
-            .card-body,
-            .cta-box,
-            .highlight-panel {
-                padding: 20px;
-            }
-
-            .hero-card {
-                padding: 20px;
-            }
-
-            .brand-title {
-                font-size: 0.95rem;
-            }
-
-            .brand-subtitle {
-                font-size: 0.78rem;
-            }
-
-            .product-actions,
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .button-primary,
-            .button-secondary {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="topbar">
-        <div class="container topbar-inner">
-            <a href="#top" class="brand">
-                <img src="ppl-ds-firm-logo.png" alt="Pawel Pliousnin Digital Solutions logo">
-                <div class="brand-text">
-                    <span class="brand-title">Pawel Pliousnin Digital Solutions</span>
-                    <span class="brand-subtitle">Adobe Commerce & Magento Extensions</span>
-                </div>
-            </a>
-
-            <nav class="nav">
-                <a href="#about">About</a>
-                <a href="#products">Products</a>
-                <a href="#why-us">Why Us</a>
-                <a href="#contact">Contact</a>
-                <a class="nav-cta" href="support.html">Support</a>
-            </nav>
-        </div>
-    </header>
-
-    <main id="top">
+---
+layout: default
+title: 'Pawel Pliousnin Digital Solutions'
+description: 'Pawel Pliousnin Digital Solutions builds Adobe Commerce, Magento and TYPO3 extensions for search, reports, admin actions and rights management.'
+current: 'index.html'
+footer_note: 'Adobe Commerce, Magento and TYPO3 extensions.'
+---
+
+<main>
         <section class="hero">
             <div class="container hero-grid">
                 <div>
-                    <div class="eyebrow">Independent Software Vendor for Adobe Commerce</div>
-                    <h1>
-                        Build better commerce experiences with
-                        <span class="gradient">high-performance Magento extensions</span>
-                    </h1>
-                    <p>
-                        Pawel Pliousnin Digital Solutions develops focused Adobe Commerce and Magento extensions that improve search quality, reporting visibility, and merchant decision-making with practical, scalable tools built for real stores.
+                    <div class="eyebrow">Independent software vendor</div>
+                    <h1>Extensions for Magento, Adobe Commerce and TYPO3.</h1>
+                    <p class="lead">
+                        Pawel Pliousnin Digital Solutions builds modules for search, reports, admin actions, checkout notes, test data and TYPO3 backend rights.
                     </p>
-
                     <div class="hero-actions">
-                        <a class="button-primary" href="#products">Explore Products</a>
-                        <a class="button-secondary" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">View Partner Profile</a>
+                        <a class="button" href="#products">Explore extensions</a>
+                        <a class="button-secondary" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Adobe Commerce profile</a>
                     </div>
-
-                    <div class="hero-points">
-                        <div class="hero-point">
-                            <strong>Adobe Commerce</strong>
-                            <span>Built specifically for Magento and Adobe Commerce merchants.</span>
+                    <div class="metric-row">
+                        <div class="metric">
+                            <strong>Magento</strong>
+                            <span>Search, reports, checkout and admin tools.</span>
                         </div>
-                        <div class="hero-point">
-                            <strong>Merchant Focused</strong>
-                            <span>Features designed around real business needs, not filler.</span>
+                        <div class="metric">
+                            <strong>TYPO3</strong>
+                            <span>Delegated backend rights management.</span>
                         </div>
-                        <div class="hero-point">
-                            <strong>Performance Mindset</strong>
-                            <span>Clean UX, measurable value, and practical optimization tools.</span>
+                        <div class="metric">
+                            <strong>2026</strong>
+                            <span>Current product and license pages.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="visual-panel">
+                    <img src="assets/images/scored-search.png" alt="PPL Scored Search product interface preview">
+                    <div class="logo-strip">
+                        <div class="logo-tile">
+                            <img src="assets/images/ppl-scored-search-logo.png" alt="PPL Scored Search logo">
+                        </div>
+                        <div class="logo-tile">
+                            <img src="assets/images/ppl-order-metrics-logo.png" alt="PPL Order Metrics logo">
+                        </div>
+                        <div class="logo-tile">
+                            <img src="assets/images/ppl-ds-firm-logo.png" alt="PPL Digital Solutions logo">
                         </div>
                     </div>
                 </div>
-
-                <div class="hero-visual">
-                    <div class="hero-card">
-                        <img class="hero-logo" src="ppl-ds-firm-logo.png" alt="Pawel Pliousnin Digital Solutions company logo">
-                        <img class="hero-banner" src="scored-search.png" alt="PPL Scored Search banner">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">Focused software for modern Adobe Commerce stores</h2>
-                <p class="section-text">
-                    Pawel Pliousnin Digital Solutions builds specialized Adobe Commerce and Magento extensions for merchants who want stronger product discovery, clearer analytics, and practical software that supports measurable business growth.
-                </p>
             </div>
         </section>
 
         <section id="products" class="section">
             <div class="container">
-                <h2 class="section-title">Products</h2>
-                <p class="section-text">
-                    The current product portfolio focuses on two important merchant needs: better on-site search and deeper business analytics.
-                </p>
-
-                <div class="cards two" style="margin-top: 28px;">
-                    <article class="card">
-                        <div class="product-image-wrap">
-                            <img class="product-image banner-style" src="scored-search.png" alt="PPL Scored Search banner graphic">
-                        </div>
-                        <div class="card-body">
-                            <img class="product-icon" src="ppl-scored-search-logo.png" alt="PPL Scored Search logo">
-                            <div class="badge">Live on Adobe Commerce Marketplace</div>
-                            <h3 class="product-title">PPL Scored Search</h3>
-                            <p class="product-text">
-                                Replace default Magento search with a powerful, configurable scoring engine built for real-world commerce. PPL Scored Search improves relevance, strengthens product discovery, and helps customers find the right products faster.
-                            </p>
-                            <ul class="feature-list">
-                                <li>Fully configurable scoring and weighting system</li>
-                                <li>OpenSearch and MySQL engine support</li>
-                                <li>Modern AJAX search overlay with UX focus</li>
-                                <li>Built-in testing and comparison tools</li>
-                                <li>Designed for real merchant optimization workflows</li>
-                            </ul>
-                            <div class="product-actions">
-                                <a class="button-primary" href="https://commercemarketplace.adobe.com/ppl-scored-search.html" target="_blank" rel="noopener noreferrer">View on Marketplace</a>
-                                <a class="button-secondary" href="support.html">Product Support</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="product-image-wrap">
-                            <img class="product-image" src="ppl-order-metrics-logo.png" alt="PPL Order Metrics graphic">
-                        </div>
-                        <div class="card-body">
-                            <img class="product-icon" src="ppl-order-metrics-logo.png" alt="PPL Order Metrics logo">
-                            <div class="badge review">Currently under review</div>
-                            <h3 class="product-title">PPL Order Metrics</h3>
-                            <p class="product-text">
-                                Go beyond basic Magento revenue summaries with advanced reporting designed for business decisions. PPL Order Metrics helps merchants understand trends, product performance, order behavior, and the drivers behind store results.
-                            </p>
-                            <ul class="feature-list">
-                                <li>Advanced order and revenue reporting</li>
-                                <li>Business-focused dashboards inside admin</li>
-                                <li>Filtering, comparison, and export support</li>
-                                <li>Insight into trends, products, and customer behavior</li>
-                                <li>Built to turn raw data into practical action</li>
-                            </ul>
-                            <div class="product-actions">
-                                <a class="button-primary" href="support.html">Request Information</a>
-                                <a class="button-secondary" href="support.html">Product Support</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="why-us" class="section">
-            <div class="container">
-                <h2 class="section-title">Why work with PPL Digital Solutions</h2>
-                <p class="section-text">
-                    The focus is on product quality, merchant value, maintainable development, and practical Adobe Commerce solutions rather than generic feature volume.
-                </p>
-
-                <div class="info-grid" style="margin-top: 28px;">
-                    <div class="info-box">
-                        <h3>Built for merchants</h3>
-                        <p>Each extension is designed around practical use cases, real workflows, and measurable improvements inside Adobe Commerce.</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Technical depth</h3>
-                        <p>Products are built with attention to configurability, maintainability, performance, and compatibility.</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Long-term product mindset</h3>
-                        <p>The goal is to create reliable, reusable commerce software products rather than one-off project code.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="highlight-panel">
-                    <div>
-                        <img src="ppl-order-metrics-logo.png" alt="PPL Order Metrics product image">
-                    </div>
-                    <div>
-                        <h3>Software built for better search, stronger reporting, and better decisions</h3>
-                        <p>
-                            Whether the goal is improving product discovery or understanding store performance more clearly, the product portfolio is built to help merchants get more value from Adobe Commerce.
-                        </p>
-                        <p>
-                            Pawel Pliousnin Digital Solutions is positioned as a technology-focused Adobe Commerce partner with a strong emphasis on extension quality, merchant outcomes, and maintainable software development.
-                        </p>
-                        <a class="button-primary" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Visit Partner Profile</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="cta-section">
-            <div class="container">
-                <div class="cta-box">
-                    <h2>Let’s build better Adobe Commerce tooling</h2>
+                <div class="section-head">
+                    <h2>Extension portfolio</h2>
                     <p>
-                        For product information, support requests, partnership inquiries, or Adobe Commerce extension topics, use the support page or visit the Adobe Commerce Marketplace partner profile.
+                        Each product page lists the module purpose, the related admin area and the license.
                     </p>
-                    <div class="hero-actions" style="justify-content: center; margin-bottom: 0;">
-                        <a class="button-primary" href="support.html">Open Support</a>
-                        <a class="button-secondary" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Partner Profile</a>
-                        <a class="button-secondary" href="https://pliou.github.io/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                        <a class="button-secondary" href="https://pliou.github.io/license/" target="_blank" rel="noopener noreferrer">License</a>
+                </div>
+
+                <div class="grid two">
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-scored-search-logo.png" alt="PPL Scored Search logo">
+                        <div>
+                            <h3>PPL Scored Search</h3>
+                            <p>Configurable Magento search ranking with MySQL and OpenSearch support, AJAX overlay, weighted attributes, variant-aware display and test tooling.</p>
+                            <div class="tag-row">
+                                <span class="tag">Magento</span>
+                                <span class="tag">Search</span>
+                                <span class="tag">v1.1.1</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="scored-search.html">Open product page</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-order-metrics-logo.png" alt="PPL Order Metrics logo">
+                        <div>
+                            <h3>PPL Order Metrics</h3>
+                            <p>Magento reports for revenue, customers, period comparisons, scheduled CSV exports and report runtime checks.</p>
+                            <div class="tag-row">
+                                <span class="tag">Magento</span>
+                                <span class="tag">Analytics</span>
+                                <span class="tag">v1.0.1</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="order-metrics.html">Open product page</a>
+                                <a class="button-secondary" href="https://commercemarketplace.adobe.com/ppl-module-ordermetrics.html" target="_blank" rel="noopener noreferrer">Marketplace</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-action-widget-logo.png" alt="PPL Action Widget logo">
+                        <div>
+                            <h3>PPL Action Widget</h3>
+                            <p>Admin cards for zero-result searches, stock checks, coupon cost, abandoned carts and product content gaps.</p>
+                            <div class="tag-row">
+                                <span class="tag">Magento</span>
+                                <span class="tag">Admin actions</span>
+                                <span class="tag">v1.0.0</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="action-widget.html">Open product page</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-report-core-logo.png" alt="PPL Reports logo">
+                        <div>
+                            <h3>PPL Reports</h3>
+                            <p>Separate report modules for revenue, dashboard cards, coupons, top SKUs, stale products, refunds, payment revenue, exports and daily digests.</p>
+                            <div class="tag-row">
+                                <span class="tag">Magento</span>
+                                <span class="tag">Reports</span>
+                                <span class="tag">Suite</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="reports.html">Open reports page</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-dev-tool-logo.png" alt="PPL Developer Tools logo">
+                        <div>
+                            <h3>PPL Developer Tools</h3>
+                            <p>Magento development tools for search-term tests, generated-data cleanup, seed orders, customers, articles and store setup.</p>
+                            <div class="tag-row">
+                                <span class="tag">Magento</span>
+                                <span class="tag">Development</span>
+                                <span class="tag">QA</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="developer-tools.html">Open tools page</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-order-comment-logo.png" alt="PPL Order Comment logo">
+                        <div>
+                            <h3>PPL Order Comment</h3>
+                            <p>Checkout order comment field for Magento. It captures a customer's note during checkout and keeps it with the order for admin follow-up.</p>
+                            <div class="tag-row">
+                                <span class="tag">Magento</span>
+                                <span class="tag">Checkout</span>
+                                <span class="tag">v1.0.0</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="order-comment.html">Open product page</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-hub-logo.png" alt="PPL Hub logo">
+                        <div>
+                            <h3>PPL Hub</h3>
+                            <p>Shared Magento admin menu root for PPL modules.</p>
+                            <div class="tag-row">
+                                <span class="tag">Magento</span>
+                                <span class="tag">Admin foundation</span>
+                                <span class="tag">v1.0.0</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="ppl-hub.html">Open hub page</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card product-card">
+                        <img src="assets/images/ppl-rights-management-logo.png" alt="PPL Rights Management logo">
+                        <div>
+                            <h3>PPL Rights Management for TYPO3</h3>
+                            <p>TYPO3 13.4 backend module for delegated backend user, group, module, DB mount, file mount and page-tree rights management.</p>
+                            <div class="tag-row">
+                                <span class="tag">TYPO3</span>
+                                <span class="tag">GPL-2.0-or-later</span>
+                                <span class="tag">13.4.x</span>
+                            </div>
+                            <div class="actions">
+                                <a class="button" href="typo3-rights-management.html">Open TYPO3 page</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt">
+            <div class="container split">
+                <div>
+                    <h2>Main areas</h2>
+                    <p class="lead">
+                        The product pages are grouped by the admin work they support.
+                    </p>
+                </div>
+                <div class="grid two">
+                    <div class="card">
+                        <h3>Discovery</h3>
+                        <p>Scored Search handles ranking rules, variants and search tests.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Visibility</h3>
+                        <p>Order Metrics and Reports add revenue, order, coupon, product quality and export views.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Action</h3>
+                        <p>Action Widget shows admin cards generated from shop data.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Governance</h3>
+                        <p>TYPO3 Rights Management manages backend users, groups, modules and mounts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section warm">
+            <div class="container">
+                <div class="callout">
+                    <h2>Licensing, privacy and support are published with the products.</h2>
+                    <p>
+                        Magento and Adobe Commerce extensions use the PPL Custom Software License Agreement. The TYPO3 extension uses GPL-2.0-or-later, which matches typical TYPO3 extension distribution.
+                    </p>
+                    <div class="actions">
+                        <a class="button-secondary" href="license.html">Commerce license</a>
+                        <a class="button-secondary" href="typo3-license.html">TYPO3 license</a>
+                        <a class="button-secondary" href="privacy.html">Privacy policy</a>
+                        <a class="button-secondary" href="impressum.html">Impressum</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="container footer-inner">
-            <div class="footer-text">
-                © 2026 Pawel Pliousnin Digital Solutions. All rights reserved.
-            </div>
-            <div class="footer-links">
-                <a href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Marketplace Partner Profile</a>
-                <a href="https://pliou.github.io/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                <a href="https://pliou.github.io/license/" target="_blank" rel="noopener noreferrer">License</a>
-                <a href="support.html">Support</a>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>

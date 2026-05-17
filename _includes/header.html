@@ -1,0 +1,21 @@
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="{{ '/index.html' | relative_url }}" class="brand"{% if page.current == 'index.html' %} aria-current="page"{% endif %}>
+            <img src="{{ '/assets/images/ppl-ds-firm-logo.png' | relative_url }}" alt="Pawel Pliousnin Digital Solutions logo">
+            <span>
+                <span class="brand-name">Pawel Pliousnin Digital Solutions</span>
+                <span class="brand-line">Commerce, Magento and TYPO3 extensions</span>
+            </span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+            <a href="{{ '/index.html' | relative_url }}"{% if page.current == 'index.html' %} aria-current="page"{% endif %}>Home</a>
+            <a href="{{ '/scored-search.html' | relative_url }}"{% if page.current == 'scored-search.html' %} aria-current="page"{% endif %}>Scored Search</a>
+            <a href="{{ '/order-metrics.html' | relative_url }}"{% if page.current == 'order-metrics.html' %} aria-current="page"{% endif %}>Order Metrics</a>
+            <a href="{{ '/action-widget.html' | relative_url }}"{% if page.current == 'action-widget.html' %} aria-current="page"{% endif %}>Action Widget</a>
+            <a href="{{ '/reports.html' | relative_url }}"{% if page.current == 'reports.html' %} aria-current="page"{% endif %}>Reports</a>
+            <a href="{{ '/developer-tools.html' | relative_url }}"{% if page.current == 'developer-tools.html' %} aria-current="page"{% endif %}>Dev Tools</a>
+            <a href="{{ '/typo3-rights-management.html' | relative_url }}"{% if page.current == 'typo3-rights-management.html' %} aria-current="page"{% endif %}>TYPO3</a>
+            <a href="{{ '/support.html' | relative_url }}"{% if page.current == 'support.html' %} aria-current="page"{% endif %}>Support</a>
+        </nav>
+    </div>
+</header>

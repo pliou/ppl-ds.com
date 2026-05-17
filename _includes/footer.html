@@ -1,0 +1,15 @@
+<footer class="footer">
+    <div class="container footer-inner">
+        <div>
+            <strong>Pawel Pliousnin Digital Solutions</strong>
+            <div class="small">{{ page.footer_note | default: 'Adobe Commerce, Magento and TYPO3 extensions.' }}</div>
+        </div>
+        <div class="footer-links">
+            <a href="{{ '/license.html' | relative_url }}"{% if page.current == 'license.html' %} aria-current="page"{% endif %}>License</a>
+            <a href="{{ '/typo3-license.html' | relative_url }}"{% if page.current == 'typo3-license.html' %} aria-current="page"{% endif %}>TYPO3 license</a>
+            <a href="{{ '/privacy.html' | relative_url }}"{% if page.current == 'privacy.html' %} aria-current="page"{% endif %}>Privacy</a>
+            <a href="{{ '/impressum.html' | relative_url }}"{% if page.current == 'impressum.html' %} aria-current="page"{% endif %}>Impressum</a>
+            <a href="{{ '/support.html' | relative_url }}"{% if page.current == 'support.html' %} aria-current="page"{% endif %}>Support</a>
+        </div>
+    </div>
+</footer>
