@@ -195,6 +195,14 @@ h1 {
     color: #ffffff;
 }
 
+.hero h1 {
+    background: linear-gradient(90deg, #ffffff 0%, #7df1ff 34%, #f43ab7 72%, #ffd447 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 18px 44px rgba(9, 200, 246, 0.12);
+}
+
 h2 {
     font-size: 34px;
     color: #ffffff;
