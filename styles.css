@@ -278,6 +278,20 @@ h3 {
     border: 1px solid var(--line);
 }
 
+.wide-media {
+    padding: 12px;
+}
+
+.wide-media > img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.image-feature {
+    display: grid;
+    gap: 24px;
+}
+
 .logo-strip {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
