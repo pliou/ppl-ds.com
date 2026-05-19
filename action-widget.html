@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 'PPL Action Widget for Magento'
-description: 'PPL Action Widget creates Magento admin cards from shop data, with severity, evidence and recommended next steps.'
+description: 'PPL Action Widget turns Magento shop data and report signals into prioritized admin action cards, report widgets and board controls.'
 current: 'action-widget.html'
 footer_note: 'PPL Action Widget for Magento.'
 ---
@@ -10,20 +10,39 @@ footer_note: 'PPL Action Widget for Magento.'
         <section class="hero">
             <div class="container hero-grid">
                 <div>
-                    <div class="eyebrow">Magento admin action system</div>
+                    <div class="eyebrow">Magento admin action board</div>
                     <h1>PPL Action Widget</h1>
                     <p class="lead">
-                        Action Widget creates Magento admin cards from shop data. Each card can show severity, score, evidence, recommendation and a link to the related admin area.
+                        Action Widget turns shop signals and PPL report data into prioritized Magento admin cards. Store teams see what needs attention first, why it matters and where to continue.
                     </p>
                     <div class="tag-row">
                         <span class="tag">Version 1.0.0</span>
                         <span class="tag">PPL Hub</span>
                         <span class="tag">PPL Report Core</span>
+                        <span class="tag">Cron snapshots</span>
                         <span class="tag">Custom software license</span>
                     </div>
+                    <div class="hero-actions">
+                        <a class="button" href="#board-flow">View board flow</a>
+                        <a class="button-secondary" href="#action-signals">See action signals</a>
+                    </div>
+                    <div class="metric-row">
+                        <div class="metric">
+                            <strong>11</strong>
+                            <span>built-in action signals across search, catalog, customers, sales and checkout.</span>
+                        </div>
+                        <div class="metric">
+                            <strong>Cards + reports</strong>
+                            <span>urgent action cards can sit beside compact PPL report widgets.</span>
+                        </div>
+                        <div class="metric">
+                            <strong>Cron</strong>
+                            <span>snapshot builds keep heavy checks away from normal admin page loading.</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="visual-panel">
-                    <img src="assets/images/ppl-action-widget-logo.png" alt="PPL Action Widget logo">
+                <div class="visual-panel screenshot-panel">
+                    <img src="assets/images/ppl-action-widget/action-widget-01-board-overview.png" alt="PPL Action Widget board overview with priorities and report cards">
                 </div>
             </div>
         </section>
@@ -31,21 +50,134 @@ footer_note: 'PPL Action Widget for Magento.'
         <section class="section">
             <div class="container split">
                 <div>
-                    <h2>From data to action</h2>
+                    <h2>From report signals to daily work</h2>
                     <p class="lead">
-                        The module uses detectors. Each detector checks one topic, stores a snapshot and creates cards in the admin.
+                        The module adds an operational board inside Magento admin. It combines urgent action cards with compact report widgets, so a daily review starts in one place instead of several report screens.
                     </p>
                     <div class="aside-box">
-                        Admin path: PPL Hub > PPL Action Widget > Action Widgets.
+                        Admin path: PPL Hub > PPL Action Widget. The storefront is not changed.
                     </div>
                 </div>
                 <div>
                     <ul class="feature-list">
                         <li><strong>Action cards:</strong> severity, score, impact, evidence, recommendation and CTA per finding.</li>
-                        <li><strong>Snapshot calculation:</strong> cron-based builds avoid heavy live admin queries.</li>
-                        <li><strong>Detectors:</strong> zero-result searches, viewed-not-bought products, abandoned carts, stock risk, content gaps and more.</li>
-                        <li><strong>Admin controls:</strong> threshold configuration, per-admin dismiss actions and CSV export.</li>
+                        <li><strong>Report widgets:</strong> compatible PPL Reports can appear as compact board cards beside urgent tasks.</li>
+                        <li><strong>Board controls:</strong> open all cards, build now, place defaults and edit the visible board layout.</li>
+                        <li><strong>Operational workflow:</strong> review, open the related admin area, export card data or dismiss items already handled.</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="board-flow">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Board flow</h2>
+                    <p>The four storyboard screens show the intended daily admin path: start with the board, inspect urgent cards, keep report context nearby and adjust the layout when the workflow changes.</p>
+                </div>
+
+                <div class="grid two action-storyboard">
+                    <article class="visual-panel action-story-card">
+                        <img src="assets/images/ppl-action-widget/action-widget-01-board-overview.png" alt="PPL Action Widget board as the starting point">
+                        <h3>1. Board overview</h3>
+                        <p>Status counters show critical, warning, info, report and total cards so admins can scan the day's priorities quickly.</p>
+                    </article>
+                    <article class="visual-panel action-story-card">
+                        <img src="assets/images/ppl-action-widget/action-widget-02-critical-action-cards.png" alt="PPL Action Widget critical action cards">
+                        <h3>2. Critical action cards</h3>
+                        <p>Urgent cards surface business-relevant issues such as zero-result searches, inactive customers, SKU drops and missing product content.</p>
+                    </article>
+                    <article class="visual-panel action-story-card">
+                        <img src="assets/images/ppl-action-widget/action-widget-03-report-widgets.png" alt="PPL Action Widget report widgets">
+                        <h3>3. Report widgets</h3>
+                        <p>Report cards keep Top SKUs, Revenue, Refund Rate, Zero Result Searches and other metrics visible without leaving the board.</p>
+                    </article>
+                    <article class="visual-panel action-story-card">
+                        <img src="assets/images/ppl-action-widget/action-widget-04-board-controls.png" alt="PPL Action Widget board controls">
+                        <h3>4. Board controls</h3>
+                        <p>Build now refreshes snapshots, Place defaults restores the recommended board and Edit board controls which widgets are visible.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="action-signals">
+            <div class="container">
+                <div class="section-head">
+                    <h2>What the extension can detect</h2>
+                    <p>Action Widget ships with detector families for common ecommerce operating risks. Each detector creates normalized card data with the context an admin needs before opening the related Magento area.</p>
+                </div>
+
+                <div class="grid three">
+                    <div class="card">
+                        <h3>Search demand</h3>
+                        <p>Find customer search terms that returned no products and point admins toward synonyms, naming fixes or missing catalog coverage.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Catalog performance</h3>
+                        <p>Flag products viewed but not bought, stock-out risk, SKU performance drops and missing product content that can hurt conversion.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Customer activity</h3>
+                        <p>Highlight inactive customers, new customer acquisition and guest checkout share so follow-up work is easier to prioritize.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Sales pressure</h3>
+                        <p>Expose expensive coupon usage and payment cancellation patterns before they become harder to explain from monthly totals.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Checkout behavior</h3>
+                        <p>Show abandoned carts and add-to-cart activity without purchase, with links back to the relevant Magento admin areas.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Report context</h3>
+                        <p>Place compatible PPL Report Core widgets on the same board, including revenue, top SKU, refund, coupon and zero-result report cards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section warm">
+            <div class="container split">
+                <div>
+                    <h2>How it stays usable in admin</h2>
+                    <p class="lead">
+                        The board is designed for repeated checks, not one-off analysis. Heavy calculations are built into snapshots, and each admin can clear items they have already reviewed.
+                    </p>
+                </div>
+                <div class="grid two">
+                    <div class="mini-finding">
+                        <h3>Snapshot builds</h3>
+                        <p>Cron builds action snapshots and the Build now control lets admins refresh the board after configuration or catalog changes.</p>
+                    </div>
+                    <div class="mini-finding">
+                        <h3>Configurable board</h3>
+                        <p>Default cards can be restored, and the board layout can be edited to match the team's reporting routine.</p>
+                    </div>
+                    <div class="mini-finding">
+                        <h3>Dismiss and export</h3>
+                        <p>Reviewed cards can be dismissed per admin, and card data can be exported for follow-up outside Magento.</p>
+                    </div>
+                    <div class="mini-finding">
+                        <h3>Shared foundation</h3>
+                        <p>PPL Hub provides the admin entry point. PPL Report Core provides report widget compatibility and shared report behavior.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="callout">
+                    <h2>Built for Magento 2.4 and Adobe Commerce 2.4 operations.</h2>
+                    <p>
+                        Install it when a store already has useful data but the admin team needs a clearer daily priority list. Action Widget does not replace detailed reports; it turns selected report and store signals into concrete next steps.
+                    </p>
+                    <div class="actions">
+                        <a class="button-secondary" href="reports.html">Open Reports</a>
+                        <a class="button-secondary" href="ppl-hub.html">Open PPL Hub</a>
+                        <a class="button-secondary" href="license.html">License</a>
+                    </div>
                 </div>
             </div>
         </section>
