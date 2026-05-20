@@ -284,6 +284,10 @@ h3 {
     margin: 0 auto;
 }
 
+.order-metrics-visual .data-visual {
+    margin-top: 16px;
+}
+
 .wide-media {
     padding: 12px;
 }

@@ -1,0 +1,116 @@
+Create 10 marketplace-ready images for Magento / Adobe Commerce extensions in the same visual style.
+
+General style for all images:
+Use the same premium PPL extension image style: glossy 3D app-icon inspired visuals, rounded square compositions, blue-to-cyan-to-magenta gradient backgrounds, clean depth, soft highlights, professional SaaS/admin-tool look, bright but trustworthy. The images should feel like a consistent product family.
+
+Marketplace rules:
+Do not use the Adobe logo.
+Do not use the Magento logo.
+Do not write “certified”, “approved”, “official”, “partner”, “best”, “guaranteed”, or “5-star”.
+Do not show real customer data, real order data, real payment data, or real store screenshots.
+Do not include long paragraphs or tiny unreadable UI text.
+Do not invent additional product claims.
+Use clean icon-based concepts, admin dashboards, report cards, charts, tables, CSV documents, checkmarks, filters, and workflow symbols.
+
+Important text rule:
+Only write the exact extension name and the short allowed labels listed for each image.
+
+Image 1:
+Extension name: PPL Report Coupon Usage
+Allowed text:
+“PPL Report Coupon Usage”
+Optional small text:
+“Coupon usage report”
+Visual concept:
+Show a report dashboard with coupon ticket icons, discount symbols, order rows, a small chart, and a checkmark. Communicate review of coupon usage and promotion impact.
+
+Image 2:
+Extension name: PPL Report Coupon Usage
+Allowed text:
+“PPL Report Coupon Usage”
+Allowed labels:
+“Coupons”
+“Orders”
+“CSV”
+Visual concept:
+Show coupon data flowing into a clean report table and CSV export document. Avoid fake discount values or campaign claims.
+
+Image 3:
+Extension name: PPL Report Orders by Hour
+Allowed text:
+“PPL Report Orders by Hour”
+Optional small text:
+“Hourly order patterns”
+Visual concept:
+Show a clock combined with bar charts and order cards. Communicate order volume by hour for operational planning.
+
+Image 4:
+Extension name: PPL Report Orders by Hour
+Allowed text:
+“PPL Report Orders by Hour”
+Allowed labels:
+“Hour”
+“Orders”
+“Chart”
+Visual concept:
+Show a 24-hour style timeline with chart bars and an order document icon. Keep numbers symbolic, not detailed fake metrics.
+
+Image 5:
+Extension name: PPL Report Payment Revenue
+Allowed text:
+“PPL Report Payment Revenue”
+Optional small text:
+“Revenue by payment method”
+Visual concept:
+Show payment method cards, revenue chart bars, a currency symbol, and a report table. Communicate payment-level revenue visibility.
+
+Image 6:
+Extension name: PPL Report Payment Revenue
+Allowed text:
+“PPL Report Payment Revenue”
+Allowed labels:
+“Payments”
+“Revenue”
+“CSV”
+Visual concept:
+Show payment data grouped into a report table with an export document. Do not show real card brands, real payment provider logos, or fake transaction data.
+
+Image 7:
+Extension name: PPL Report Product Data Quality
+Allowed text:
+“PPL Report Product Data Quality”
+Optional small text:
+“Catalog quality checks”
+Visual concept:
+Show product cards being checked for image, description, meta title, and SKU quality. Use checkmarks, warning markers, product tiles, and a clean admin report look.
+
+Image 8:
+Extension name: PPL Report Product Data Quality
+Allowed text:
+“PPL Report Product Data Quality”
+Allowed labels:
+“Images”
+“Descriptions”
+“SKUs”
+Visual concept:
+Show catalog data fields with validation icons and a report table. Make it clear this is a read-only quality report, not automatic product editing.
+
+Image 9:
+Extension name: PPL Report Recent Orders Export
+Allowed text:
+“PPL Report Recent Orders Export”
+Optional small text:
+“Recent orders CSV”
+Visual concept:
+Show recent order rows moving into a CSV export document. Use order list icons, download arrow, spreadsheet symbol, and checkmark.
+
+Image 10:
+Extension name: PPL Report Recent Orders Export
+Allowed text:
+“PPL Report Recent Orders Export”
+Allowed labels:
+“Orders”
+“Export”
+“CSV”
+Visual concept:
+Show a clean export workflow from Magento-style order table to CSV file. Avoid fake customer names, real order IDs, or real financial values.

@@ -1,0 +1,25 @@
+extension	image_folder	icon	asset_count
+PPL Action Widget	ppl-action-widget	icon-240x240.png	7
+PPL Dev Create Articles	ppl-dev-create-articles	icon-240x240.png	3
+PPL Dev Create Customers	ppl-dev-create-customers	icon-240x240.png	3
+PPL Dev Create Orders	ppl-dev-create-orders	icon-240x240.png	3
+PPL Dev Create Store	ppl-dev-create-store	icon-240x240.png	3
+PPL Dev Tool	ppl-dev-tool	icon-240x240.png	3
+PPL Hub	ppl-hub	icon-240x240.png	3
+PPL Missing Translation	ppl-missing-translation	ppl_missing_translation_icon.png	6
+PPL Order Comment	ppl-order-comment	icon-240x240.png	3
+PPL Order Metrics	ppl-order-metrics	icon-240x240.png	1
+PPL Report Admin Daily Digest	ppl-report-admin-daily-digest	icon-240x240.png	5
+PPL Report Core	ppl-report-core	icon-240x240.png	3
+PPL Report Coupon Usage	ppl-report-coupon-usage	icon-240x240.png	3
+PPL Report Orders by Hour	ppl-report-orders-by-hour	icon-240x240.png	3
+PPL Report Payment Revenue	ppl-report-payment-revenue	icon-240x240.png	3
+PPL Report Product Data Quality	ppl-report-product-data-quality	icon-240x240.png	3
+PPL Report Recent Orders Export	ppl-report-recent-orders-export	icon-240x240.png	3
+PPL Report Refund Rate	ppl-report-refund-rate	icon-240x240.png	3
+PPL Report Revenue	ppl-report-revenue	icon-240x240.png	3
+PPL Report Search Zero Results	ppl-report-search-zero-results	icon-240x240.png	3
+PPL Report Stale Products	ppl-report-stale-products	icon-240x240.png	3
+PPL Report Top SKUs	ppl-report-top-skus	icon-240x240.png	8
+PPL Rights Management	ppl-rights-management	icon-240x240.png	2
+PPL Scored Search	ppl-scored-search	icon-240x240.png	2
