@@ -1,15 +1,23 @@
 <footer class="footer">
-    <div class="container footer-inner">
-        <div>
+    <div class="container footer-grid">
+        <div class="footer-brand">
             <strong>Pawel Pliousnin Digital Solutions</strong>
-            <div class="small">{{ page.footer_note | default: 'Adobe Commerce, Magento and TYPO3 extensions.' }}</div>
+            <span>{{ page.footer_note | default: 'Magento, Adobe Commerce and TYPO3 extensions.' }}</span>
+            <span class="small">Updated product, privacy and license pages for the 2026 release line.</span>
         </div>
-        <div class="footer-links">
-            <a href="{{ '/license.html' | relative_url }}"{% if page.current == 'license.html' %} aria-current="page"{% endif %}>License</a>
-            <a href="{{ '/typo3-license.html' | relative_url }}"{% if page.current == 'typo3-license.html' %} aria-current="page"{% endif %}>TYPO3 license</a>
-            <a href="{{ '/privacy.html' | relative_url }}"{% if page.current == 'privacy.html' %} aria-current="page"{% endif %}>Privacy</a>
-            <a href="{{ '/impressum.html' | relative_url }}"{% if page.current == 'impressum.html' %} aria-current="page"{% endif %}>Impressum</a>
-            <a href="{{ '/support.html' | relative_url }}"{% if page.current == 'support.html' %} aria-current="page"{% endif %}>Support</a>
+        <div class="footer-col">
+            <strong>Magento</strong>
+            <a href="{{ '/search-bundle.html' | relative_url }}">Search bundle</a>
+            <a href="{{ '/widget-reports-bundle.html' | relative_url }}">Widget + reports</a>
+            <a href="{{ '/dev-bundle.html' | relative_url }}">Dev bundle</a>
+            <a href="{{ '/order-metrics.html' | relative_url }}">Order Metrics</a>
+        </div>
+        <div class="footer-col">
+            <strong>Company</strong>
+            <a href="{{ '/support.html' | relative_url }}">Support</a>
+            <a href="{{ '/privacy.html' | relative_url }}">Privacy</a>
+            <a href="{{ '/license.html' | relative_url }}">License</a>
+            <a href="{{ '/impressum.html' | relative_url }}">Impressum</a>
         </div>
     </div>
 </footer>

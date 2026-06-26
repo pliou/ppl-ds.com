@@ -1,78 +1,68 @@
 ---
 layout: default
 title: 'Privacy Policy for PPL Extensions'
-description: 'Privacy Policy for PPL Magento, Adobe Commerce and TYPO3 extensions.'
+description: 'Privacy policy for PPL Magento, Adobe Commerce and TYPO3 extensions, including PPL Tracking & Privacy behavior signal handling.'
 current: 'privacy.html'
 footer_note: 'Privacy policy for PPL extensions.'
 ---
 
 <main>
-        <section class="section">
-            <div class="container legal">
-                <h1>Privacy Policy for PPL Extensions</h1>
-                <p class="small">Last updated: 18.05.2026</p>
+    <section class="section">
+        <div class="container legal card">
+            <h1>Privacy Policy for PPL Extensions</h1>
+            <p class="small">Last updated: 26.06.2026</p>
+            <p>This Privacy Policy describes how Pawel Pliousnin Digital Solutions ("we", "our", or "us") handles information in relation to PPL Magento / Adobe Commerce and TYPO3 extensions. This page explains the normal PPL extension model and the specific role of PPL Tracking &amp; Privacy.</p>
+            <p class="notice"><strong>Operator control:</strong> PPL extensions run inside the merchant's Magento / Adobe Commerce or TYPO3 environment. The merchant or site operator controls installation, configuration, hosting, consent settings and retention settings.</p>
 
-                <p>This Privacy Policy describes how Pawel Pliousnin Digital Solutions ("we", "our", or "us") handles information in relation to the following extensions and extension groups:</p>
-                <ul>
-                    <li>PPL Scored Search for Magento / Adobe Commerce</li>
-                    <li>PPL Order Metrics for Magento / Adobe Commerce</li>
-                    <li>PPL Action Widget for Magento / Adobe Commerce</li>
-                    <li>PPL Reports for Magento / Adobe Commerce</li>
-                    <li>PPL Developer Tools and PPL Hub modules for Magento / Adobe Commerce</li>
-                    <li>PPL Order Comment for Magento / Adobe Commerce</li>
-                    <li>PPL Rights Management for TYPO3</li>
-                </ul>
+            <h2>Extensions covered</h2>
+            <ul>
+                <li>PPL Search Intelligence, PPL Discovery Filters and PPL Scored Search for Magento / Adobe Commerce</li>
+                <li>PPL Tracking &amp; Privacy for Magento / Adobe Commerce</li>
+                <li>PPL Action Widget, Dashboard Widgets Pro, PPL Reports and PPL Order Metrics for Magento / Adobe Commerce</li>
+                <li>PPL Developer Tools, generator modules, Order Comment and PPL Hub for Magento / Adobe Commerce</li>
+                <li>PPL Rights Management for TYPO3</li>
+            </ul>
 
-                <h2>General Statement</h2>
-                <p>Our extensions run inside Magento / Adobe Commerce or TYPO3 environments and do not independently collect or store personal data outside of those systems.</p>
-                <p>Magento, Adobe Commerce or TYPO3 itself may process personal data as part of normal operation. This is outside the scope of our extensions.</p>
+            <h2>General statement</h2>
+            <p>Most PPL extensions process configuration, operational report data, search data, admin workflow data or development data inside the host application. They do not independently send personal data to PPL Digital Solutions.</p>
+            <p>Magento, Adobe Commerce, TYPO3, hosting providers, payment providers, analytics providers or other third-party services configured by the merchant may process personal data as part of normal store operation. Those systems are controlled by the merchant or site operator and are outside the direct control of PPL extensions.</p>
 
-                <h2>Information We Collect</h2>
-                <ul>
-                    <li>We do not directly collect or store personal data.</li>
-                    <li>Our extensions do not include tracking, analytics, or profiling functionality.</li>
-                    <li>If third-party services are integrated by the merchant, only the minimum data required for functionality may be transmitted.</li>
-                </ul>
+            <h2>PPL Tracking &amp; Privacy</h2>
+            <p>PPL Tracking &amp; Privacy is different from purely operational modules because it is designed to collect and manage first-party behavioral signals when the merchant installs, enables and configures it. Its purpose is to keep such signals inside the Magento installation instead of sending them to PPL or to an external analytics service by default.</p>
+            <p>Depending on configuration and consent state, the extension can process signals such as searches, result impressions, clicks, purchases and returns. It can aggregate these into behavior, query and query/product statistics for operational use. Optional consumers, such as PPL Search Intelligence, may use aggregated signals when installed and allowed by policy.</p>
+            <p>PPL Tracking &amp; Privacy includes consent-gated collection, Do-Not-Track support, fixed-window rate limiting, event de-duplication, scheduled aggregation, raw-event retention and daily purge behavior where configured. It also includes consent audit handling, configurable PII redaction and data-subject export or erasure tooling.</p>
+            <p>The extension does not send behavioral data to PPL Digital Solutions. Behavioral data remains inside the merchant's Magento environment unless the merchant separately configures another integration or export path.</p>
 
-                <h2>How We Use Information</h2>
-                <p>Any data processed by our extensions is used exclusively for:</p>
-                <ul>
-                    <li>Providing core functionality</li>
-                    <li>Improving system performance and search accuracy (Scored Search)</li>
-                    <li>Processing and displaying order-related metrics (Order Metrics)</li>
-                    <li>Displaying admin actions, reports, comments, development tools or delegated TYPO3 rights controls</li>
-                </ul>
-                <p>We do not:</p>
-                <ul>
-                    <li>Sell personal data</li>
-                    <li>Share data for marketing purposes</li>
-                    <li>Use data for profiling or advertising</li>
-                </ul>
+            <h2>Information processed</h2>
+            <ul>
+                <li>Configuration and admin settings needed for installed extensions to work.</li>
+                <li>Operational data already present in Magento / Adobe Commerce, such as orders, products, customers, reports, search terms or catalog data, where needed for the relevant extension.</li>
+                <li>TYPO3 backend permission and rights data where PPL Rights Management is installed.</li>
+                <li>For PPL Tracking &amp; Privacy only: consent-gated behavioral events and derived aggregate statistics according to the merchant's configuration.</li>
+            </ul>
 
-                <h2>Data Storage</h2>
-                <p>Our extensions do not store personal data outside the host system.</p>
-                <p>All data processing occurs within the Magento / Adobe Commerce or TYPO3 system and is controlled by the merchant or site operator.</p>
-                <p>Our extensions do not create independent external databases, external storage, or remote data persistence. Configuration or operational data required by an extension remains inside the host application environment.</p>
+            <h2>How information is used</h2>
+            <p>Data processed by PPL extensions is used only to provide the installed extension functionality. Examples include search ranking, filter counts, reports, action cards, dashboard widgets, development data generation, checkout notes, privacy tooling or TYPO3 rights management.</p>
+            <p>We do not sell personal data, share data for marketing purposes, or use merchant store data for advertising profiling.</p>
 
-                <h2>Hosting &amp; Server Logs</h2>
-                <p>While our extensions do not collect personal data, the hosting environment, such as the web server, Magento / Adobe Commerce system or TYPO3 system, may automatically log technical data such as:</p>
-                <ul>
-                    <li>IP addresses</li>
-                    <li>Request logs</li>
-                    <li>System events</li>
-                </ul>
-                <p>This is standard server behavior and not controlled by our extensions.</p>
+            <h2>Data storage</h2>
+            <p>PPL extensions store required configuration and operational data inside the host Magento / Adobe Commerce or TYPO3 environment. They do not create a PPL-operated external database for merchant data.</p>
+            <p>PPL Tracking &amp; Privacy stores configured raw events, consent audit data, aggregate statistics and retention state inside the Magento environment. Retention and purge behavior are controlled by the merchant's configuration and cron operation.</p>
 
-                <h2>Data Security</h2>
-                <p>We implement reasonable technical and organizational measures to protect data processed within the scope of our extensions.</p>
-                <p>However, overall system security depends on the Magento / Adobe Commerce installation and hosting environment.</p>
+            <h2>Data-subject requests</h2>
+            <p>For PPL Tracking &amp; Privacy, the extension includes data-subject export and erasure tooling so the merchant can respond to relevant requests for data handled by the extension. The merchant remains responsible for evaluating legal obligations and for handling data held by Magento, TYPO3 or other third-party systems.</p>
 
-                <h2>Third-Party Services</h2>
-                <p>If the merchant integrates third-party services, those services may process data according to their own privacy policies. We are not responsible for third-party data handling.</p>
+            <h2>Hosting and server logs</h2>
+            <p>The hosting environment, web server, Magento / Adobe Commerce system or TYPO3 system may automatically log technical data such as IP addresses, request logs and system events. This is standard server behavior and is controlled by the merchant or hosting provider.</p>
 
-                <h2>Contact</h2>
-                <p>If you have any questions about this Privacy Policy, please contact:</p>
-                <p>Pawel Pliousnin Digital Solutions<br>Email: <a href="mailto:pliousnin@ppl-ds.com">pliousnin@ppl-ds.com</a></p>
-            </div>
-        </section>
-    </main>
+            <h2>Third-party services</h2>
+            <p>If the merchant integrates third-party services, those services may process data according to their own privacy policies and contracts. PPL extensions do not control third-party data handling.</p>
+
+            <h2>Security</h2>
+            <p>PPL extensions are designed to use the host application's permissions, ACL and configuration patterns where applicable. Overall system security depends on the Magento / Adobe Commerce or TYPO3 installation, hosting, access controls, patch status and merchant configuration.</p>
+
+            <h2>Contact</h2>
+            <p>Pawel Pliousnin Digital Solutions<br>Email: <a href="mailto:pliousnin@ppl-ds.com">pliousnin@ppl-ds.com</a></p>
+        </div>
+    </section>
+</main>

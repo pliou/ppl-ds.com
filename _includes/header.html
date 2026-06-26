@@ -3,19 +3,52 @@
         <a href="{{ '/index.html' | relative_url }}" class="brand"{% if page.current == 'index.html' %} aria-current="page"{% endif %}>
             <img src="{{ '/assets/images/ppl-ds-firm-logo.png' | relative_url }}" alt="Pawel Pliousnin Digital Solutions logo">
             <span>
-                <span class="brand-name">Pawel Pliousnin Digital Solutions</span>
-                <span class="brand-line">Commerce, Magento and TYPO3 extensions</span>
+                <span class="brand-name">PPL Digital Solutions</span>
+                <span class="brand-line">Magento, Adobe Commerce and TYPO3 extensions</span>
             </span>
         </a>
         <nav class="nav" aria-label="Main navigation">
-            <a href="{{ '/index.html' | relative_url }}"{% if page.current == 'index.html' %} aria-current="page"{% endif %}>Home</a>
-            <a href="{{ '/scored-search.html' | relative_url }}"{% if page.current == 'scored-search.html' %} aria-current="page"{% endif %}>Scored Search</a>
-            <a href="{{ '/order-metrics.html' | relative_url }}"{% if page.current == 'order-metrics.html' %} aria-current="page"{% endif %}>Order Metrics</a>
-            <a href="{{ '/action-widget.html' | relative_url }}"{% if page.current == 'action-widget.html' %} aria-current="page"{% endif %}>Action Widget</a>
-            <a href="{{ '/reports.html' | relative_url }}"{% if page.current == 'reports.html' %} aria-current="page"{% endif %}>Reports</a>
-            <a href="{{ '/developer-tools.html' | relative_url }}"{% if page.current == 'developer-tools.html' %} aria-current="page"{% endif %}>Dev Tools</a>
-            <a href="{{ '/typo3-rights-management.html' | relative_url }}"{% if page.current == 'typo3-rights-management.html' %} aria-current="page"{% endif %}>TYPO3</a>
-            <a href="{{ '/support.html' | relative_url }}"{% if page.current == 'support.html' %} aria-current="page"{% endif %}>Support</a>
+            <a class="nav-link" href="{{ '/index.html' | relative_url }}"{% if page.current == 'index.html' %} aria-current="page"{% endif %}>Home</a>
+
+            <details class="nav-menu">
+                <summary class="nav-link{% if page.group == 'magento' %} is-current{% endif %}">Magento</summary>
+                <div class="mega-panel" aria-label="Magento and Adobe Commerce pages">
+                    <div class="mega-column">
+                        <span class="mega-kicker">Bundle pages</span>
+                        <a href="{{ '/magento.html' | relative_url }}"{% if page.current == 'magento.html' %} aria-current="page"{% endif %}>Magento overview</a>
+                        <a href="{{ '/search-bundle.html' | relative_url }}"{% if page.current == 'search-bundle.html' %} aria-current="page"{% endif %}>Search bundle</a>
+                        <a href="{{ '/widget-reports-bundle.html' | relative_url }}"{% if page.current == 'widget-reports-bundle.html' %} aria-current="page"{% endif %}>Widget + reports bundle</a>
+                        <a href="{{ '/dev-bundle.html' | relative_url }}"{% if page.current == 'dev-bundle.html' %} aria-current="page"{% endif %}>Dev bundle</a>
+                    </div>
+                    <div class="mega-column">
+                        <span class="mega-kicker">Standalone / utilities</span>
+                        <a href="{{ '/order-metrics.html' | relative_url }}"{% if page.current == 'order-metrics.html' %} aria-current="page"{% endif %}>Order Metrics</a>
+                        <a href="{{ '/tracking-privacy.html' | relative_url }}"{% if page.current == 'tracking-privacy.html' %} aria-current="page"{% endif %}>Tracking &amp; Privacy</a>
+                        <a href="{{ '/order-comment.html' | relative_url }}"{% if page.current == 'order-comment.html' %} aria-current="page"{% endif %}>Order Comment</a>
+                        <a href="{{ '/ppl-hub.html' | relative_url }}"{% if page.current == 'ppl-hub.html' %} aria-current="page"{% endif %}>PPL Hub</a>
+                        <a href="{{ '/marketplace.html' | relative_url }}"{% if page.current == 'marketplace.html' %} aria-current="page"{% endif %}>Marketplace links</a>
+                    </div>
+                    <div class="mega-cta">
+                        <strong>Adobe Commerce Marketplace</strong>
+                        <span>Open listed product pages or the PPL partner profile for modules currently shown through the profile.</span>
+                        <a class="mini-button" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Partner profile</a>
+                    </div>
+                </div>
+            </details>
+
+            <details class="nav-menu nav-menu-small">
+                <summary class="nav-link{% if page.group == 'typo3' %} is-current{% endif %}">TYPO3</summary>
+                <div class="mega-panel compact" aria-label="TYPO3 pages">
+                    <div class="mega-column">
+                        <a href="{{ '/typo3.html' | relative_url }}"{% if page.current == 'typo3.html' %} aria-current="page"{% endif %}>TYPO3 overview</a>
+                        <a href="{{ '/typo3-rights-management.html' | relative_url }}"{% if page.current == 'typo3-rights-management.html' %} aria-current="page"{% endif %}>Rights Management</a>
+                        <a href="{{ '/typo3-license.html' | relative_url }}"{% if page.current == 'typo3-license.html' %} aria-current="page"{% endif %}>TYPO3 license</a>
+                    </div>
+                </div>
+            </details>
+
+            <a class="nav-link" href="{{ '/support.html' | relative_url }}"{% if page.current == 'support.html' %} aria-current="page"{% endif %}>Support</a>
+            <a class="nav-market" href="{{ '/marketplace.html' | relative_url }}"{% if page.current == 'marketplace.html' %} aria-current="page"{% endif %}>Marketplace</a>
         </nav>
     </div>
 </header>

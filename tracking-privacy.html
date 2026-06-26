@@ -1,0 +1,61 @@
+---
+layout: default
+title: 'PPL Tracking and Privacy for Magento and Adobe Commerce'
+description: 'PPL Tracking & Privacy is a Magento extension for consent-aware first-party behavior signals, retention, PII redaction and data-subject export or erasure tooling.'
+current: 'tracking-privacy.html'
+footer_note: 'PPL Tracking & Privacy for Magento and Adobe Commerce.'
+group: 'magento'
+---
+
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="eyebrow">Magento privacy and signal owner</div>
+                <h1>Behavior signals stay inside Magento and under consent rules.</h1>
+                <p class="lead">PPL Tracking &amp; Privacy gives merchants a consent-aware way to capture and aggregate first-party storefront signals such as searches, result impressions, clicks, purchases and returns. It is designed to own consent, audit, retention, PII redaction and data-subject tooling instead of hiding those responsibilities inside a search module.</p>
+                <div class="hero-actions"><a class="button" href="https://commercemarketplace.adobe.com/partner/pliousninga24e" target="_blank" rel="noopener noreferrer">Open partner profile</a><a class="button-secondary" href="privacy.html">Privacy policy</a><a class="button-ghost" href="search-bundle.html">Search bundle</a></div>
+                <div class="tag-row"><span class="tag">Consent-gated</span><span class="tag">Do-Not-Track support</span><span class="tag">DSR tooling</span><span class="tag magenta">No data sent to PPL</span></div>
+            </div>
+            <div class="visual-panel wide-media"><img src="assets/images/release-story/ppl-tracking-and-privacy/01_ppl-tracking-and-privacy.png" alt="PPL Tracking and Privacy admin interface"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container split">
+            <div>
+                <h2>What it does</h2>
+                <p class="lead">The module can collect consent-gated behavior events, aggregate them into behavior, query and query/product statistics, and purge raw events according to a configured retention window. Data stays in the merchant's Magento installation and is not sent to PPL or a third-party analytics service by the extension.</p>
+            </div>
+            <div class="card">
+                <ul class="check-list">
+                    <li>Consent-gated collector for search, impression and click signals.</li>
+                    <li>Server-side purchase and return signals where configured.</li>
+                    <li>Fixed-window rate limiting and event de-duplication.</li>
+                    <li>Append-only consent audit and configurable PII redaction.</li>
+                    <li>Data-subject export and erasure CLI tooling.</li>
+                    <li>Scheduled aggregation and purge jobs for retention control.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section alt">
+        <div class="container">
+            <div class="section-head"><h2>Why it matters for the search bundle</h2><p>Search Intelligence can run without behavior tracking. When behavior signals are wanted, Tracking &amp; Privacy is the separate owner for consent and raw-event responsibility.</p></div>
+            <div class="grid three">
+                <article class="signal-card"><h3>Clear ownership</h3><p>Search relevance does not secretly become the tracking system. Tracking owns raw behavior events, consent and DSR workflows.</p></article>
+                <article class="signal-card"><h3>Aggregated consumers</h3><p>Optional consumers such as Search Intelligence can use neutral aggregated behavior, product or zero-result signals when installed and allowed.</p></article>
+                <article class="signal-card"><h3>Graceful fallback</h3><p>Search and filters remain useful without behavioral signals, which is important for stores with stricter privacy policies.</p></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container media-grid">
+            <div class="visual-panel media-card media-card-large"><img src="assets/images/release-story/ppl-tracking-and-privacy/02_ppl-tracking-and-privacy.png" alt="PPL Tracking and Privacy consent settings"><h3>Consent and configuration</h3><p>Control collection and retention from the Magento admin area under PPL Hub.</p></div>
+            <div class="visual-panel media-card"><img src="assets/images/release-story/ppl-tracking-and-privacy/03_ppl-tracking-and-privacy.png" alt="PPL Tracking and Privacy statistics"><h3>Aggregation</h3><p>Scheduled jobs build behavior, query and product statistics from allowed events.</p></div>
+            <div class="visual-panel media-card"><img src="assets/images/release-story/ppl-tracking-and-privacy/04_ppl-tracking-and-privacy.png" alt="PPL Tracking and Privacy DSR tooling"><h3>DSR support</h3><p>Export or erase a data subject's data using the included CLI tooling.</p></div>
+        </div>
+    </section>
+</main>
