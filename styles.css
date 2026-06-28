@@ -789,9 +789,15 @@ h3 {
     background: #ffffff;
 }
 
-.media-card.tall img {
-    aspect-ratio: 3 / 2;
-    object-fit: contain;
+.visual-panel.hero-logo {
+    display: grid;
+    place-items: center;
+}
+
+.visual-panel.hero-logo > img {
+    width: auto;
+    max-width: 360px;
+    height: auto;
 }
 
 .media-card-large {
