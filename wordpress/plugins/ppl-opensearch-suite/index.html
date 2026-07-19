@@ -7,7 +7,7 @@ tagline: 'Verify a store-owned OpenSearch connection before relying on it for Wo
 icon: '/assets/images/wordpress/ppl-opensearch-suite.png'
 group: 'wordpress'
 tags: ['OpenSearch', 'Diagnostics', 'TLS & auth', 'WooCommerce']
-release_status: 'The dedicated WordPress.org diagnostic edition is in final package verification.'
+release_status: 'Version 1.0.0 WordPress.org submission candidate; directory approval is pending.'
 free_intro: 'The directory edition is a useful diagnostic and connector product rather than a placeholder. It helps administrators verify the OpenSearch service they configured.'
 free_features:
   - title: 'Connection diagnostics'
@@ -31,5 +31,5 @@ commercial_features:
   - title: 'Advanced operations'
     text: 'Adds higher-frequency processing, blue/green rebuilds and external queue adapters.'
 requirements: 'WordPress 6.5 or newer, PHP 8.1 or newer, WooCommerce and access to an administrator-configured OpenSearch endpoint.'
-external_services: 'The plugin connects only to the OpenSearch endpoint configured by the site administrator. OpenSearch receives diagnostic requests and query text entered in the test tool. Freemius connects only after explicit opt-in.'
+external_services: 'The plugin connects only to the OpenSearch endpoint configured by the site administrator. OpenSearch receives diagnostic requests, configured HTTP Basic credentials, the selected index pattern and the size-zero test query. This Directory edition does not contact PPL or Freemius and sends no telemetry.'
 ---
