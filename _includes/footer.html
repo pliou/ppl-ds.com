@@ -2,8 +2,15 @@
     <div class="container footer-grid">
         <div class="footer-brand">
             <strong>Pawel Pliousnin Digital Solutions</strong>
-            <span>{{ page.footer_note | default: 'Magento, Adobe Commerce and TYPO3 extensions.' }}</span>
+            <span>{{ page.footer_note | default: 'Magento, WordPress and TYPO3 extensions.' }}</span>
             <span class="small">Updated product, privacy and license pages for the 2026 release line.</span>
+        </div>
+        <div class="footer-col">
+            <strong>WordPress</strong>
+            <a href="{{ '/wordpress/' | relative_url }}">Plugin overview</a>
+            <a href="{{ '/wordpress/plugins/ppl-search-suite/' | relative_url }}">Search Suite</a>
+            <a href="{{ '/wordpress/plugins/ppl-opensearch-suite/' | relative_url }}">OpenSearch Suite</a>
+            <a href="{{ '/wordpress/plugins/ppl-order-metrics/' | relative_url }}">Order Metrics</a>
         </div>
         <div class="footer-col">
             <strong>Magento</strong>

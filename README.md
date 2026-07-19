@@ -6,6 +6,7 @@ Main public sections:
 
 - Home / portfolio overview
 - Magento and Adobe Commerce bundle pages
+- WordPress and WooCommerce plugin overview plus canonical product pages
 - Search Bundle
 - Widget + Reports Bundle
 - Dev Bundle

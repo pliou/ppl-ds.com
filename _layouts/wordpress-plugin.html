@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<main>
+    <section class="hero wordpress-plugin-hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="eyebrow">WordPress &amp; WooCommerce plugin</div>
+                <h1>{{ page.product_name }}</h1>
+                <p class="lead">{{ page.tagline }}</p>
+                <div class="hero-actions">
+                    <a class="button" href="{{ '/wordpress/' | relative_url }}">All WordPress plugins</a>
+                    <a class="button-secondary" href="{{ '/support.html' | relative_url }}">Support</a>
+                    <a class="button-ghost" href="{{ '/privacy.html' | relative_url }}">Privacy</a>
+                </div>
+                <div class="tag-row">
+                    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+                </div>
+            </div>
+            <div class="visual-panel wordpress-icon-panel">
+                <img src="{{ page.icon | relative_url }}" alt="{{ page.product_name }} icon">
+                <div class="plugin-status">
+                    <strong>Release status</strong>
+                    <span>{{ page.release_status }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">Included free functionality</div>
+                <h2>A useful edition that works without a paid unlock.</h2>
+                <p>{{ page.free_intro }}</p>
+            </div>
+            <div class="grid three">
+                {% for feature in page.free_features %}
+                <article class="signal-card">
+                    <h3>{{ feature.title }}</h3>
+                    <p>{{ feature.text }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section alt">
+        <div class="container split">
+            <div>
+                <div class="eyebrow">Editions</div>
+                <h2>Free first, commercial depth separately distributed.</h2>
+                <p class="lead">{{ page.commercial_intro }}</p>
+                <div class="notice"><strong>WordPress.org package:</strong> The free package contains no commercial implementation disabled behind a license gate. Separately distributed editions are described for comparison only.</div>
+            </div>
+            <div class="timeline">
+                {% for feature in page.commercial_features %}
+                <div class="timeline-item">
+                    <span class="step">{{ forloop.index }}</span>
+                    <div><h3>{{ feature.title }}</h3><p>{{ feature.text }}</p></div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container grid three">
+            <article class="card">
+                <h3>Requirements</h3>
+                <p>{{ page.requirements }}</p>
+            </article>
+            <article class="card">
+                <h3>External services</h3>
+                <p>{{ page.external_services }}</p>
+            </article>
+            <article class="card">
+                <h3>Support and documentation</h3>
+                <p>Use the product page as the canonical plugin reference. Installation, privacy and support information remain available even before a WordPress.org listing is approved.</p>
+                <div class="actions"><a class="button-ghost" href="{{ '/support.html' | relative_url }}">Open support</a></div>
+            </article>
+        </div>
+    </section>
+</main>

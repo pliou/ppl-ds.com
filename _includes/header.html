@@ -4,7 +4,7 @@
             <img src="{{ '/assets/images/ppl-ds-firm-logo.png' | relative_url }}" alt="Pawel Pliousnin Digital Solutions logo">
             <span>
                 <span class="brand-name">PPL Digital Solutions</span>
-                <span class="brand-line">Magento, Adobe Commerce and TYPO3 extensions</span>
+                <span class="brand-line">Magento, WordPress and TYPO3 extensions</span>
             </span>
         </a>
         <nav class="nav" aria-label="Main navigation">
@@ -35,6 +35,8 @@
                     </div>
                 </div>
             </details>
+
+            <a class="nav-link{% if page.group == 'wordpress' %} is-current{% endif %}" href="{{ '/wordpress/' | relative_url }}"{% if page.group == 'wordpress' %} aria-current="page"{% endif %}>WordPress</a>
 
             <details class="nav-menu nav-menu-small">
                 <summary class="nav-link{% if page.group == 'typo3' %} is-current{% endif %}">TYPO3</summary>

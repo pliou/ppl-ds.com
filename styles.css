@@ -1010,8 +1010,54 @@ h3 {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1fr repeat(2, minmax(180px, 0.28fr));
+    grid-template-columns: 1fr repeat(3, minmax(160px, 0.28fr));
     gap: 28px;
+}
+
+.wordpress-icon-panel {
+    min-height: 430px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 18px;
+    padding: 32px;
+}
+
+.wordpress-icon-panel > img {
+    width: min(100%, 300px);
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 56px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.46), 0 0 48px rgba(54, 242, 255, 0.18);
+}
+
+.plugin-status {
+    width: min(100%, 360px);
+    display: grid;
+    gap: 5px;
+    padding: 14px 16px;
+    border: 1px solid rgba(54, 242, 255, 0.22);
+    border-radius: 16px;
+    background: rgba(2, 7, 20, 0.72);
+    text-align: center;
+}
+
+.plugin-status strong {
+    color: #ffffff;
+}
+
+.plugin-status span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.wordpress-logo-cloud {
+    align-self: stretch;
+    align-content: center;
+}
+
+.wordpress-product-grid .bundle-card {
+    border-color: rgba(54, 242, 255, 0.16);
 }
 
 .footer-brand,
